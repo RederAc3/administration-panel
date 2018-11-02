@@ -1,2 +1,230 @@
-import "variables";
-import "mixins";
+@import "variables";
+@import "mixins";
+@import "normalize";
+@import "layout";
+
+body {
+    margin: 0;
+    padding: 0;
+
+    .container {
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+
+            .sidebar {
+                display: block;
+                position: fixed;
+                width: 188px;
+                height: 100%;
+                background-color: #191919;
+
+                .logo {
+                    height: 61px;
+                    padding: 0;
+                    display: flex;
+                    justify-content: space-around;
+
+                    p {
+                        margin: 15px 15px;
+                        letter-spacing: 1px;
+                        font-size: 35px;
+                        font-family: 'Just Another Hand';
+                        color: #f5f5f2;
+
+                    }
+
+                    .hamburger {
+                        width: 18px;
+                        height: 16px;
+                        margin-top: 23px;
+                        margin-right: 18px;
+                        border: 0;
+                        border-top: 2px solid #999;
+                        position: relative;
+                        
+                        &::after, &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            border-top: 2px solid #999;
+                            transform: translateY(5px);
+                        }
+                        
+                        &::after {
+                            transform: translateY(12px);
+                        }
+                    }
+                }
+
+                .row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 188px;
+                    height: 300px;
+                    padding-bottom: 20px;
+                    border-bottom: .5px solid #979797;
+                    
+                    .button-menu {
+                        width: 100%;
+                        height: 39px;
+                        display: flex;
+                        &:hover {
+                            background-color: #3e3e3e;
+                            color: #f5f5f2;
+                            border-left: 4px solid #ffa200;
+                            transition: .2s;
+                            cursor: pointer;
+
+                            .img-svg {
+                                fill: #f5f5f2;
+                                transition: .2s;
+                            }
+
+                            .button {
+                                background-color: #3e3e3e;
+                                transition: .2s;
+
+                                & > p {
+                                    color: #f5f5f2;
+                                    transition: .2s;
+                                }
+                            }
+
+
+
+                        }
+
+                        .img-svg {
+                            width: 20px;
+                            height: 20px;
+                            margin: 10px 5px 0 20px;
+                            fill: #5a5858;
+
+                        }
+
+                        .button {
+
+                            width: 100%;
+                            height: 30px;
+                            padding: 0;
+                            margin: auto 10px;
+                            background-color: #191919;
+                            border: none;
+
+                            & > p {
+
+                                color: #5a5858;
+                                font-size: 15px;
+                                font-family: arial;
+                                text-align: left;
+                                padding: 6px 0;
+                                margin: 0;
+
+                            }
+
+
+                        }
+
+                    }
+                }
+
+                .manager {
+
+                    & > p {
+                        padding: 5px 10px 5px;
+                        color: #5a5858;
+                        font-family: arial;
+                        font-weight: bold;
+                        margin: 30px 10px;
+                        font-size: 12px;
+                    }
+                    .profile {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: nowrap;
+
+                        .img {
+                            display: flex;
+                            position: relative;
+                            width: 75px;
+                            height: 45px;
+                            margin: 0 10px;
+                            justify-content: flex-end;
+                            border-radius: 50%;
+                            background: url(http://fotoblysk.com/wp-content/uploads/2016/07/Ring-light-portret-1.jpg);
+                            background-position: center;
+                            background-size: 70px;
+                            &::after {
+                                content: "";
+                                width: 10px;
+                                height: 10px;
+                                position: absolute;
+                                background-color: #04ae00;
+                                border-radius: 50%;
+                            }
+
+
+                        }
+
+                        p {
+                            width: 100%;
+                            display: inline-block;
+                            margin: auto 0;
+                            font-family: arial;
+                            padding-left: 5px;
+                            color: #56819f;
+
+                        }
+                    }
+                }
+
+            }
+
+            .main {
+                width: 100%;
+
+                .row {
+                    width: 100%;
+
+
+//                    .upper-menu {
+//                        display: flex;
+//                        flex-wrap: nowrap;
+//                        width: 100%;
+//                        height: 45px;
+//                        background-color: #aaa;
+//                        align-items: flex-end;
+//                        position: fixed;
+//                        justify-content: flex-end;
+//                        z-index: -1;
+//
+//                        img {
+//                            width: 18px;
+//                            height: 18px;
+//                        }
+//
+//                        .menu {
+//                            width: 100px;
+//                            display: inline-block;
+//                            text-align: center;
+//                            padding: 5px;
+//                            font-family: arial;
+//                            border-left: 1px;
+//                            border-color: #6f6f6f;
+//
+//
+//
+//                        }
+//
+//
+//                    }
+                }
+            }
+        }
+    }
+
+}
