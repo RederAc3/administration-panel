@@ -6,19 +6,31 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+
+    p {
+
+        padding: 0;
+        margin: 0;
+        font-family: "Open Sans", Helvetica, Arial;
+    }
+
+
 
     .container {
+        display: flex;
+        flex-direction: row;
 
-        .row {
-            display: flex;
-            flex-wrap: nowrap;
+        .col {
+            //            position: relative;
+            //            width: 188px;
 
             .sidebar {
-                display: block;
                 position: fixed;
                 width: 188px;
                 height: 100%;
                 background-color: #191919;
+                z-index: 3;
 
                 .logo {
                     height: 61px;
@@ -85,6 +97,7 @@ body {
                         width: 100%;
                         height: 39px;
                         display: flex;
+
                         &:hover {
                             background-color: #3e3e3e;
                             color: #f5f5f2;
@@ -132,7 +145,6 @@ body {
 
                                 color: #5a5858;
                                 font-size: 15px;
-                                font-family: arial;
                                 text-align: left;
                                 padding: 6px 0;
                                 margin: 0;
@@ -154,6 +166,7 @@ body {
                         margin: 20px;
                         font-size: 14px;
                     }
+
                     .profile {
                         width: 100%;
                         display: flex;
@@ -170,6 +183,7 @@ body {
                             background: url(http://fotoblysk.com/wp-content/uploads/2016/07/Ring-light-portret-1.jpg);
                             background-position: center;
                             background-size: 70px;
+
                             &::after {
                                 content: "";
                                 width: 10px;
@@ -193,111 +207,373 @@ body {
                         }
                     }
                 }
-
             }
+        }
 
-            .main {
+        .main {
+            width: 100%;
+            padding: 0;
+            margin: 0 0 0 188px;
+            display: flex;
+            flex-direction: column;
+
+            //######################### GÓRNE MENU ###################################
+
+            .upper-menu {
+                display: flex;
+                flex-wrap: nowrap;
                 width: 100%;
-                position: relative;
+                height: 61px;
+                background-color: #fff;
+                align-items: flex-end;
+                position: fixed;
+                z-index: 2;
+                justify-content: flex-end;
+                border: 1px solid #e3e3e3;
+                margin-left: -188px;
 
-                .row {
-                    width: 100%;
+
+                .menu {
+                    height: 61px;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: flex-end;
+                    padding-top: 30px;
+                    font-family: arial;
+                    border-left: 1px;
+
+                    &:hover {
+                        background-color: darkgray;
+                    }
+
+                    p {}
+                }
 
 
-                    .upper-menu {
-                        display: flex;
-                        flex-wrap: nowrap;
-                        width: 100vw;
-                        height: 61px;
-                        background-color: #fff;
-                        align-items: flex-end;
-                        position: fixed;
-                        justify-content: flex-end;
-                        z-index: -1;
+                .Layer_1 {
+                    width: 17px;
+                    height: 18px;
+                    padding: 0;
+                    box-sizing: border-box;
 
-                        .menu {
-                            width: 100px;
-                            height: 61px;
-                            display: flex;
-                            flex-wrap: nowrap;
-                            align-items: baseline;
-                            justify-content: flex-end;
-                            text-align: center;
-                            padding: 5px;
-                            font-family: arial;
-                            border-left: 1px;
-                            border-color: #6f6f6f;
+                }
 
-                            p {
-                                
-                                padding: 0;
-                                margin: 0;
-                            } 
-                        }
-                        
+                .balance {
+                    width: 200px;
+                    border: 1px solid #e3e3e3;
+                    border-top: none;
+                    border-bottom: none;
 
-                        #Layer_1 {
-//                            width: 17px;
-//                            height: 18px;
-                            width: 20px;
-                            height: 20px;
-                            margin: 21px;
-                            padding: 0;
+                    p {
+                        font-size: 20px;
+                        padding: 20px;
+                    }
 
-                        }
+                    #arrow-down {
+                        position: relative;
+                        top: 3px;
+                        margin-right: 20px;
+                    }
+                }
 
-                        .balance {
-//                            width: 187px;
-                            width: 195px;
-                            border: 1px solid #e3e3e3;
-                            border-top: none;
-                            
-                            p {
-                                font-size: 20px;
-                            }
-                        }
+                .notifications {
+                    width: 62px;
+                    position: relative;
+                    box-sizing: border-box;
+                    padding: 20px;
 
-                        .notifications {
-                            width: 62px;
-                            position: relative;
-                            
-                            &::after {
-                                content: " ";
-                                position: absolute;
-                                width: 8px;
-                                height: 8px;
-                                top: 100px;
-                                right: 0;
-                                background-color: #f58220;
-                                border-radius: 50%;
-                                
-                            }
-                        }
-                        
-                        .account {
-                            display: flex;
-                            p {
-                                margin: 0;
-                                padding: 0;
-                                font-size: 13px;
-                                flex-wrap: nowrap;
-                            }
-                        }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 8px;
+                        height: 8px;
+                        top: 18px;
+                        left: 33px;
+                        background-color: #f58220;
+                        border-radius: 50%;
 
 
                     }
+
+                    #bell {}
+
                 }
-                
-//                .statistic {
-//                    position: relative;
-//                    
-//                    width: 1056px;
-//                    height: 7970px;
-//                    background: #333;
-//                    
-//                }
+
+                .account {
+                    width: 190px;
+                    height: 100%;
+                    border: 1px solid #e3e3e3;
+                    border-bottom: none;
+
+                    #avatar {
+                        position: relative;
+                        top: 5px;
+                        width: 20px;
+                        height: 20px;
+
+                    }
+
+                    p {
+                        margin: 0;
+                        padding: 23px 20px;
+                        height: 20px;
+                        font-size: 14px;
+                        flex-wrap: nowrap;
+                        color: #56819f;
+                    }
+                }
+
+                .logout {
+
+                    width: 69px;
+                    height: 59px;
+                    border: 1px solid #e3e3e3;
+                    border-bottom: none;
+                    border-left: none;
+
+
+                    #quit {
+                        position: relative;
+                        top: 17px;
+                        right: 20px;
+                    }
+
+                }
+            }
+
+            //######################### TREŚĆ ########################################
+            .row-main {
+                display: block;
+                width: 100%;
+                margin-top: 61px;
+
+                .statistic {
+                    width: 100%;
+                    height: 846px;
+                    box-sizing: border-box;
+                    background: #fff;
+                    border: 18px solid #f5f5f2;
+                    display: flex;
+                    flex-direction: column;
+
+                    & > p {
+                        padding: 18px;
+                        color: #979797;
+                        text-transform: uppercase;
+                        border-bottom: 1px solid #e3e3e3;
+                    }
+                    
+                    .row {
+                        width: 100%;
+                        border-bottom: 1px solid #e3e3e3;
+                    }
+                        .date {
+                            display: flex;
+                            width: 450px;
+                            height: 60px;
+                            margin: 20px auto;
+                            align-items: center;
+
+                            .input {
+                                display: flex;
+                                height: 40px;
+                                border-radius: 10%;
+                                align-items: center;
+                                margin: 0 auto;
+                                border: 1px solid #e3e3e3;
+
+
+                                .select {
+                                    outline: 0;
+                                    border: 0;
+                                    margin: 10px;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+                                    appearance: none;
+                                    font-family: "Open Sans", Helvetica, Arial;
+                                    padding: 10px;
+                                    
+                                    &:hover {
+                                        background-color: #f7f7f7
+                                    }
+
+                                    option {}
+
+                                }
+
+                                .icon-calendar {
+                                    width: 14px;
+                                    padding: 10px;
+                                    margin-right: 10px;
+                                    fill: #979797;
+                                }
+                            }
+
+                            .svg-refresh {
+                                display: flex;
+                                width: 40px;
+                                height: 40px;
+                                align-items: center;
+                                border-radius: 15%;
+                                background-color: #f58220;
+                                margin-left: -80px;
+
+                                &:hover {
+                                    background-color: #d16508;
+                                    transition: .5s;
+                                }
+
+                                .icon-refresh {
+                                    height: 17px;
+                                    margin: 12px;
+                                    fill: #fff;
+
+                                    &:active {
+                                        transform: rotate(360deg);
+                                        transition: .5s;
+                                    }
+                                }
+
+                            }
+                        }
+                    
+
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0 auto;
+                        width: 683px;
+
+                        .general {
+                            width: 100%;
+                            height: 400px;
+
+                            .info {
+                                display: flex;
+                                width: 100%;
+                                flex-direction: row;
+                                margin: 0 auto;
+                                padding-top: 20px;
+                                justify-content: center;
+
+                                .column {
+
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    .line {
+                                        display: flex;
+                                        width: 300px;
+                                        box-sizing: border-box;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        padding-top: 20px;
+                                        margin-left: 60px;
+                                        border-bottom: 1px solid #e3e3e3;
+
+                                        & > p {
+                                            font-size: 16px;
+                                            color: #979797;
+                                            font-weight: 600;
+                                            padding: 5px;
+                                            border: none;
+
+                                            &:nth-child(2) {
+                                                color: #000;
+                                                font-weight: 100;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+
+                            .earnings {
+                                height: 400px;
+                                padding-top: 50px;
+
+                                & > p {
+
+                                    color: #979797;
+                                    font-weight: 600;
+                                }
+
+                                .buttons {
+                                    display: flex;
+                                    justify-content: center;
+                                    padding-top: 50px;
+
+
+                                    button {
+                                        display: flex;
+                                        flex-direction: row;
+                                        border: none;
+                                        margin-left: 50px;
+                                        padding: 10px;
+                                        border-radius: 4px;
+                                        background-color: #f3f3f3;
+
+
+                                        & > p {
+                                            color: #979797;
+                                        }
+
+                                        .circle {
+                                            width: 15px;
+                                            height: 15px;
+                                            margin-right: 10px;
+                                            border-radius: 50%;
+                                            
+                                            &:focus {
+                                                border: none;
+                                            }
+
+                                        }
+
+                                        #blue {
+                                            background-color: #5b9bd5;
+                                        }
+
+                                        #orange {
+                                            background-color: #ff9a38;
+                                        }
+
+                                        #green {
+                                            background-color: #59b66d;
+                                        }
+                                    }
+
+                                    #earned {
+                                        background-color: #fff;
+
+                                        & > p {
+                                            color: #56819f;
+                                        }
+
+                                    }
+                                }
+
+                                .chart {
+                                    margin-top: 50px;
+
+                                    .img-chart {
+                                        display: flex;
+                                        justify-content: center;
+
+                                        img {
+                                            height: 300px;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+                }
             }
         }
+
     }
 
 }
