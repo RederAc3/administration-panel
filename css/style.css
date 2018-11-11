@@ -329,7 +329,7 @@ body .container .col .sidebar .row .button-menu a .button { width: 100%; height:
 
 body .container .col .sidebar .row .button-menu a .button > p { color: #5a5858; font-size: 15px; text-align: left; padding: 6px 0; margin: 0; transition: .5s; }
 
-body .container .col .sidebar .manager > p { color: #5a5858; font-family: arial; font-weight: bold; margin: 20px; font-size: 14px; }
+body .container .col .sidebar .manager > p { color: #5a5858; font-family: "Open Sans", Helvetica, Arial; font-weight: bold; margin: 20px; font-size: 14px; }
 
 body .container .col .sidebar .manager .profile { width: 100%; display: flex; flex-wrap: nowrap; }
 
@@ -351,13 +351,13 @@ body .container .main .upper-menu .Layer_1 { width: 17px; height: 18px; padding:
 
 body .container .main .upper-menu .balance { width: 200px; border: 1px solid #e3e3e3; border-top: none; border-bottom: none; color: #979797; }
 
-body .container .main .upper-menu .balance p { font-size: 20px; padding: 20px; font-weight: 500; }
+body .container .main .upper-menu .balance p { font-family: "Open Sans", Helvetica, Arial; font-size: 20px; padding: 20px; font-weight: 600; }
 
 body .container .main .upper-menu .balance #arrow-down { width: 8px; position: relative; top: 3px; margin-right: 20px; transform: rotate(-90deg); }
 
-body .container .main .upper-menu .notifications { width: 62px; position: relative; box-sizing: border-box; padding: 20px; }
+body .container .main .upper-menu .notifications { width: 62px; position: relative; box-sizing: border-box; padding: 20px; display: flex; justify-content: center; align-items: center; }
 
-body .container .main .upper-menu .notifications::after { content: ""; position: absolute; width: 8px; height: 8px; top: 18px; left: 33px; background-color: #f58220; border-radius: 50%; }
+body .container .main .upper-menu .notifications::after { content: ""; position: absolute; width: 8px; height: 8px; top: 20px; left: 31px; background-color: #f58220; border-radius: 50%; }
 
 body .container .main .upper-menu .account { width: 190px; height: 100%; border: 1px solid #e3e3e3; border-bottom: none; }
 
@@ -393,7 +393,7 @@ body .container .main .row-main .statistic .date .input .border { width: 1px; he
 
 body .container .main .row-main .statistic .date .input .icon-calendar { width: 14px; padding: 10px; margin-right: 15px; fill: #979797; }
 
-body .container .main .row-main .statistic .date .svg-refresh { display: flex; width: 40px; height: 40px; align-items: center; border-radius: 5px; background-color: #f58220; margin-left: -80px; transition: .5s; }
+body .container .main .row-main .statistic .date .svg-refresh { display: flex; width: 40px; height: 40px; align-items: center; border-radius: 5px; background-color: #f58220; margin: 0 70px 0 -20px; transition: .5s; }
 
 body .container .main .row-main .statistic .date .svg-refresh:hover { background-color: #ffa200; cursor: pointer; }
 
@@ -442,6 +442,40 @@ body .container .main .row-main .statistic .container .general .earnings .chart 
 body .container .main .row-main .statistic .container .general .earnings .chart .img-chart { display: flex; justify-content: center; }
 
 body .container .main .row-main .statistic .container .general .earnings .chart .img-chart img { display: block; height: 300px; }
+
+body .container .main .row-main .statistic .container-details { width: 100%; box-sizing: border-box; padding: 15px; margin: 0; }
+
+body .container .main .row-main .statistic .container-details .headlines { display: flex; flex-direction: row; justify-content: space-around; width: 100%; margin-top: 20px; border-bottom: 1px solid #e3e3e3; }
+
+body .container .main .row-main .statistic .container-details .headlines .text-headlines { display: flex; flex-direction: row; align-items: center; padding: 10px; margin-bottom: 10px; transition: .5s; }
+
+body .container .main .row-main .statistic .container-details .headlines .text-headlines:hover { background-color: #f5f5f3; cursor: pointer; }
+
+body .container .main .row-main .statistic .container-details .headlines .text-headlines:hover p { color: #333; }
+
+body .container .main .row-main .statistic .container-details .headlines .text-headlines p { text-align: left; font-size: 14px; font-weight: 600; color: #979797; margin: 0 8px 0 0; }
+
+body .container .main .row-main .statistic .container-details .headlines .text-headlines .icon-arrow-left { width: 5px; transform: rotate(90deg); }
+
+body .container .main .row-main .statistic .container-details .content-line { display: flex; justify-content: center; flex-direction: column; }
+
+body .container .main .row-main .statistic .container-details .content-line .details-line { display: flex; justify-content: space-around; align-items: center; border-bottom: 1px solid #e3e3e3; transition: .5s; }
+
+body .container .main .row-main .statistic .container-details .content-line .details-line:hover { background-color: #f5f5f2; cursor: pointer; }
+
+body .container .main .row-main .statistic .container-details .content-line .details-line p { text-align: left; padding: 25px 25px; }
+
+body .container .main .row-main .statistic .container-details .content-number { display: flex; justify-content: center; margin-top: 15px; }
+
+body .container .main .row-main .statistic .container-details .content-number .number { display: flex; flex-direction: row; align-items: center; }
+
+body .container .main .row-main .statistic .container-details .content-number .number > .icon-arrow-left, body .container .main .row-main .statistic .container-details .content-number .number .icon-arrow-right { width: 13px; padding: 10px; fill: #979797; transition: .5s; }
+
+body .container .main .row-main .statistic .container-details .content-number .number > .icon-arrow-left:hover, body .container .main .row-main .statistic .container-details .content-number .number .icon-arrow-right:hover { cursor: pointer; fill: #333; }
+
+body .container .main .row-main .statistic .container-details .content-number .number p { text-align: center; width: 15px; height: 15px; padding: 12px; color: #56819f; transition: .5s; }
+
+body .container .main .row-main .statistic .container-details .content-number .number p:hover { background-color: #f5f5f3; cursor: pointer; }
 
 body .container .main .row-main .statistic-2 { width: 100%; box-sizing: border-box; background: #fff; border: 18px solid #f5f5f2; display: flex; flex-direction: column; border-top: none; }
 
