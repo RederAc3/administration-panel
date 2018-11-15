@@ -223,51 +223,57 @@ body::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0
 
 body p { padding: 0; margin: 0; font-family: "Open Sans", Helvetica, Arial; }
 
-body .overlay { width: 100%; height: 100%; display: flex; position: fixed; z-index: 9999; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.7); transition: .5s; }
+body #container-modal-login, body container-modal-quit { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; transition: .5s; }
 
-body .overlay .login-modal { margin: auto; background-color: #fff; }
+body #container-modal-login .overlay-login, body container-modal-quit .overlay-login { width: 100%; height: 100%; display: flex; position: relative; z-index: 9999; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.7); }
 
-body .overlay .login-modal > p { border-bottom: 1px solid #e3e3e3; padding: 15px; text-transform: uppercase; color: #979797; font-weight: 500; }
+body #container-modal-login .login-modal, body container-modal-quit .login-modal { position: absolute; background-color: #fff; z-index: 9999; }
 
-body .overlay .login-modal .login { display: flex; justify-content: center; align-items: center; }
+body #container-modal-login .login-modal > p, body container-modal-quit .login-modal > p { border-bottom: 1px solid #e3e3e3; padding: 15px; text-transform: uppercase; color: #979797; font-weight: 500; }
 
-body .overlay .login-modal .login form { display: flex; flex-direction: row; justify-content: center; align-items: center; margin: 40px; }
+body #container-modal-login .login-modal .login, body container-modal-quit .login-modal .login { display: flex; justify-content: center; align-items: center; }
 
-body .overlay .login-modal .login form .login-input, body .overlay .login-modal .login form .password-input { height: 40px; border: 1px solid #e3e3e3; margin: 10px; border-radius: 5px; transition: .5s; }
+body #container-modal-login .login-modal .login form, body container-modal-quit .login-modal .login form { display: flex; flex-direction: row; justify-content: center; align-items: center; margin: 40px; }
 
-body .overlay .login-modal .login form .login-input:hover, body .overlay .login-modal .login form .password-input:hover { border: 1px solid #979797; cursor: pointer; }
+body #container-modal-login .login-modal .login form .login-input, body #container-modal-login .login-modal .login form .password-input, body container-modal-quit .login-modal .login form .login-input, body container-modal-quit .login-modal .login form .password-input { height: 40px; border: 1px solid #e3e3e3; margin: 10px; border-radius: 5px; transition: .5s; }
 
-body .overlay .login-modal .login form .login-input:hover .icon-login, body .overlay .login-modal .login form .login-input:hover .icon-password, body .overlay .login-modal .login form .password-input:hover .icon-login, body .overlay .login-modal .login form .password-input:hover .icon-password { fill: #333; }
+body #container-modal-login .login-modal .login form .login-input:hover, body #container-modal-login .login-modal .login form .password-input:hover, body container-modal-quit .login-modal .login form .login-input:hover, body container-modal-quit .login-modal .login form .password-input:hover { border: 1px solid #979797; cursor: pointer; }
 
-body .overlay .login-modal .login form .login-input .icon-login, body .overlay .login-modal .login form .login-input .icon-password, body .overlay .login-modal .login form .password-input .icon-login, body .overlay .login-modal .login form .password-input .icon-password { width: 20px; height: 20px; padding: 10px; fill: #979797; transition: .5s; }
+body #container-modal-login .login-modal .login form .login-input:hover .icon-login, body #container-modal-login .login-modal .login form .login-input:hover .icon-password, body #container-modal-login .login-modal .login form .password-input:hover .icon-login, body #container-modal-login .login-modal .login form .password-input:hover .icon-password, body container-modal-quit .login-modal .login form .login-input:hover .icon-login, body container-modal-quit .login-modal .login form .login-input:hover .icon-password, body container-modal-quit .login-modal .login form .password-input:hover .icon-login, body container-modal-quit .login-modal .login form .password-input:hover .icon-password { fill: #333; }
 
-body .overlay .login-modal .login form .login-input input, body .overlay .login-modal .login form .password-input input { width: 200px; height: 38px; font-size: 17px; padding: 0 10px; color: #979797; border: none; border-radius: 5px; cursor: pointer; }
+body #container-modal-login .login-modal .login form .login-input .icon-login, body #container-modal-login .login-modal .login form .login-input .icon-password, body #container-modal-login .login-modal .login form .password-input .icon-login, body #container-modal-login .login-modal .login form .password-input .icon-password, body container-modal-quit .login-modal .login form .login-input .icon-login, body container-modal-quit .login-modal .login form .login-input .icon-password, body container-modal-quit .login-modal .login form .password-input .icon-login, body container-modal-quit .login-modal .login form .password-input .icon-password { width: 20px; height: 20px; padding: 10px; fill: #979797; transition: .5s; }
 
-body .overlay .login-modal .login form .login-input input:focus, body .overlay .login-modal .login form .password-input input:focus { cursor: text; }
+body #container-modal-login .login-modal .login form .login-input input, body #container-modal-login .login-modal .login form .password-input input, body container-modal-quit .login-modal .login form .login-input input, body container-modal-quit .login-modal .login form .password-input input { width: 200px; height: 38px; font-size: 17px; padding: 0 10px; color: #979797; border: none; border-radius: 5px; cursor: pointer; }
 
-body .overlay .login-modal .login form .button-login { display: inline-flex; width: 150px; height: 40px; align-items: center; justify-content: center; border-radius: 5px; background-color: #f58220; transition: .5s; margin: 10px; border: none; }
+body #container-modal-login .login-modal .login form .login-input input:focus, body #container-modal-login .login-modal .login form .password-input input:focus, body container-modal-quit .login-modal .login form .login-input input:focus, body container-modal-quit .login-modal .login form .password-input input:focus { cursor: text; }
 
-body .overlay .login-modal .login form .button-login:hover { background-color: #ffa200; cursor: pointer; }
+body #container-modal-login .login-modal .login form .button-login, body container-modal-quit .login-modal .login form .button-login { display: inline-flex; width: 150px; height: 40px; align-items: center; justify-content: center; border-radius: 5px; background-color: #f58220; transition: .5s; margin: 10px; border: none; }
 
-body .overlay .login-modal .login form .button-login p { padding: 10px; border: 0; color: #f5f5f3; }
+body #container-modal-login .login-modal .login form .button-login:hover, body container-modal-quit .login-modal .login form .button-login:hover { background-color: #ffa200; cursor: pointer; }
 
-body .overlay .quit-modal { margin: auto; background-color: #fff; }
+body #container-modal-login .login-modal .login form .button-login p, body container-modal-quit .login-modal .login form .button-login p { padding: 10px; border: 0; color: #f5f5f3; }
 
-body .overlay .quit-modal > p { border-bottom: 1px solid #e3e3e3; width: 300px; padding: 25px; text-transform: none; color: #979797; font-weight: 500; }
+body #container-modal-quit { width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; transition: .5s; }
 
-body .overlay .quit-modal .button-flex { display: flex; justify-content: flex-end; }
+body #container-modal-quit .overlay-quit { width: 100%; height: 100%; display: flex; position: relative; z-index: 9999; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.7); }
 
-body .overlay .quit-modal .button-flex .button-cancel { display: inline-flex; width: 100px; height: 40px; align-items: center; justify-content: center; border-radius: 5px; background-color: #979797; transition: .5s; margin: 20px 0; }
+body #container-modal-quit .quit-modal { position: absolute; background-color: #fff; z-index: 9999; }
 
-body .overlay .quit-modal .button-flex .button-cancel:hover { background-color: #bababa; cursor: pointer; }
+body #container-modal-quit .quit-modal > p { border-bottom: 1px solid #e3e3e3; width: 300px; padding: 25px; text-transform: none; color: #979797; font-weight: 500; }
 
-body .overlay .quit-modal .button-flex .button-cancel p { padding: 10px; border: 0; color: #f5f5f3; }
+body #container-modal-quit .quit-modal .button-flex { display: flex; justify-content: flex-end; }
 
-body .overlay .quit-modal .button-flex .button-quit { display: inline-flex; width: 100px; height: 40px; align-items: center; justify-content: center; border-radius: 5px; background-color: #f58220; transition: .5s; margin: 20px; }
+body #container-modal-quit .quit-modal .button-flex .button-cancel { display: inline-flex; width: 100px; height: 40px; align-items: center; justify-content: center; border-radius: 5px; background-color: #979797; transition: .5s; margin: 20px 0; }
 
-body .overlay .quit-modal .button-flex .button-quit:hover { background-color: #ffa200; cursor: pointer; }
+body #container-modal-quit .quit-modal .button-flex .button-cancel:hover { background-color: #bababa; cursor: pointer; }
 
-body .overlay .quit-modal .button-flex .button-quit p { padding: 10px; border: 0; color: #f5f5f3; }
+body #container-modal-quit .quit-modal .button-flex .button-cancel p { padding: 10px; border: 0; color: #f5f5f3; }
+
+body #container-modal-quit .quit-modal .button-flex .button-quit { display: inline-flex; width: 100px; height: 40px; align-items: center; justify-content: center; border-radius: 5px; background-color: #f58220; transition: .5s; margin: 20px; }
+
+body #container-modal-quit .quit-modal .button-flex .button-quit:hover { background-color: #ffa200; cursor: pointer; }
+
+body #container-modal-quit .quit-modal .button-flex .button-quit p { padding: 10px; border: 0; color: #f5f5f3; }
 
 body .row-main .statistic-2 .row-input { display: flex; margin: 0 auto; width: 100%; border-bottom: 1px solid #e3e3e3; }
 
@@ -287,6 +293,8 @@ body .row-main .statistic-2 .button-save .button { display: flex; justify-conten
 
 body .row-main .statistic-2 .button-save .button:hover { background-color: #ffa200; cursor: pointer; }
 
+body .row-main .statistic-2 .button-save .button:focus { outline: none; }
+
 body .row-main .statistic-2 .button-save .button p { text-align: center; color: #e3e3e3; font-size: 17px; }
 
 body .container { display: flex; flex-direction: row; }
@@ -303,9 +311,9 @@ body .container .col .sidebar .logo .hamburger::after, body .container .col .sid
 
 body .container .col .sidebar .logo .hamburger::after { transform: translateY(12px); transition: .3s transform linear; }
 
-body .container .col .sidebar .logo .hamburger:active { transform: rotate(45deg) translateY(5px); border: none; }
+body .container .col .sidebar .logo .hamburger:focus { transform: rotate(45deg) translateY(5px); border: none; }
 
-body .container .col .sidebar .logo .hamburger:active::after { transform: rotate(-90deg) translateX(-5px); transition: .3s transform linear; }
+body .container .col .sidebar .logo .hamburger:focus::after { transform: rotate(-90deg) translateX(-5px); transition: .3s transform linear; }
 
 body .container .col .sidebar .row { display: flex; flex-wrap: wrap; align-items: center; width: 188px; height: 300px; padding-bottom: 20px; border-bottom: .5px solid #333; }
 
@@ -351,7 +359,7 @@ body .container .main .upper-menu .Layer_1 { width: 17px; height: 18px; padding:
 
 body .container .main .upper-menu .balance { width: 200px; border: 1px solid #e3e3e3; border-top: none; border-bottom: none; color: #979797; }
 
-body .container .main .upper-menu .balance p { font-family: "Open Sans", Helvetica, Arial; font-size: 20px; padding: 20px; font-weight: 600; }
+body .container .main .upper-menu .balance p { font-family: "Open Sans", Helvetica, Arial; font-size: 20px; padding: 20px; font-weight: 500; }
 
 body .container .main .upper-menu .balance #arrow-down { width: 8px; position: relative; top: 3px; margin-right: 20px; transform: rotate(-90deg); }
 
@@ -359,7 +367,7 @@ body .container .main .upper-menu .notifications { width: 62px; position: relati
 
 body .container .main .upper-menu .notifications::after { content: ""; position: absolute; width: 8px; height: 8px; top: 20px; left: 31px; background-color: #f58220; border-radius: 50%; }
 
-body .container .main .upper-menu .account { width: 190px; height: 100%; border: 1px solid #e3e3e3; border-bottom: none; }
+body .container .main .upper-menu .account { height: 100%; padding-left: 15px; border: 1px solid #e3e3e3; border-bottom: none; }
 
 body .container .main .upper-menu .account #avatar { position: relative; top: 5px; width: 20px; height: 20px; }
 
@@ -377,17 +385,15 @@ body .container .main .row-main .statistic > p { padding: 18px; color: #979797; 
 
 body .container .main .row-main .statistic .row { width: 100%; border-bottom: 1px solid #e3e3e3; }
 
-body .container .main .row-main .statistic .date { display: flex; width: 450px; height: 60px; margin: 20px auto; align-items: center; justify-content: center; }
+body .container .main .row-main .statistic .date { display: flex; width: 400px; height: 60px; margin: 20px auto; align-items: center; justify-content: center; }
 
-body .container .main .row-main .statistic .date .input { display: flex; height: 40px; border-radius: 6px; align-items: center; margin: 0 auto; border: 1px solid #e3e3e3; transition: .5s; }
+body .container .main .row-main .statistic .date .input { display: flex; height: 40px; border-radius: 6px; align-items: center; margin: 0 auto; border: 1px solid #e3e3e3; transition: .5s; margin-right: 30px; }
 
 body .container .main .row-main .statistic .date .input:hover { border: 1px solid #333; cursor: pointer; }
 
 body .container .main .row-main .statistic .date .input:hover .icon-calendar { fill: #333; transition: .1s; cursor: pointer; }
 
-body .container .main .row-main .statistic .date .input .select { outline: 0; border: 0; margin: 10px; -webkit-appearance: none; -moz-appearance: none; appearance: none; font-family: "Open Sans", Helvetica, Arial; padding: 10px; cursor: pointer; }
-
-body .container .main .row-main .statistic .date .input .select option { transition: .5s; }
+body .container .main .row-main .statistic .date .input .select { outline: 0; border: 0; margin: 10px; width: 150px; font-family: "Open Sans", Helvetica, Arial; padding: 10px; cursor: pointer; }
 
 body .container .main .row-main .statistic .date .input .border { width: 1px; height: 25px; background-color: #e3e3e3; }
 
@@ -425,6 +431,8 @@ body .container .main .row-main .statistic .container .general .earnings .button
 
 body .container .main .row-main .statistic .container .general .earnings .buttons button > p { color: #979797; }
 
+body .container .main .row-main .statistic .container .general .earnings .buttons button:focus { outline: none; }
+
 body .container .main .row-main .statistic .container .general .earnings .buttons button .circle { width: 15px; height: 15px; margin-right: 10px; border-radius: 50%; }
 
 body .container .main .row-main .statistic .container .general .earnings .buttons button #blue { background-color: #5b9bd5; }
@@ -437,33 +445,43 @@ body .container .main .row-main .statistic .container .general .earnings .button
 
 body .container .main .row-main .statistic .container .general .earnings .buttons #earned > p { color: #56819f; }
 
-body .container .main .row-main .statistic .container .general .earnings .chart { margin-top: 50px; }
-
-body .container .main .row-main .statistic .container .general .earnings .chart .img-chart { display: flex; justify-content: center; }
-
-body .container .main .row-main .statistic .container .general .earnings .chart .img-chart img { display: block; height: 300px; }
+body .container .main .row-main .statistic .container .general .earnings .chart { display: flex; justify-content: center; width: 100%; height: 400px; }
 
 body .container .main .row-main .statistic .container-details { width: 100%; box-sizing: border-box; padding: 15px; margin: 0; }
 
-body .container .main .row-main .statistic .container-details .headlines { display: flex; flex-direction: row; justify-content: space-around; width: 100%; margin-top: 20px; border-bottom: 1px solid #e3e3e3; }
+body .container .main .row-main .statistic .container-details table { width: 100%; border-spacing: 0; text-align: center; margin: 20px auto; }
 
-body .container .main .row-main .statistic .container-details .headlines .text-headlines { display: flex; flex-direction: row; align-items: center; padding: 10px; margin-bottom: 10px; transition: .5s; }
+body .container .main .row-main .statistic .container-details table tr { text-align: center; }
 
-body .container .main .row-main .statistic .container-details .headlines .text-headlines:hover { background-color: #f5f5f3; cursor: pointer; }
+body .container .main .row-main .statistic .container-details table tr th { padding: 10px; margin-bottom: 10px; transition: .5s; border-bottom: 1px solid #e3e3e3; border-collapse: separate; }
 
-body .container .main .row-main .statistic .container-details .headlines .text-headlines:hover p { color: #333; }
+body .container .main .row-main .statistic .container-details table tr th:hover { background-color: #f5f5f3; cursor: pointer; }
 
-body .container .main .row-main .statistic .container-details .headlines .text-headlines p { text-align: left; font-size: 14px; font-weight: 600; color: #979797; margin: 0 8px 0 0; }
+body .container .main .row-main .statistic .container-details table tr th:hover p { color: #333; }
 
-body .container .main .row-main .statistic .container-details .headlines .text-headlines .icon-arrow-left { width: 5px; transform: rotate(90deg); }
+body .container .main .row-main .statistic .container-details table tr th:hover .icon-arrow-left { fill: #979797; }
+
+body .container .main .row-main .statistic .container-details table tr th p { height: 20px; display: inline-block; font-size: 14px; font-weight: 600; color: #979797; padding: 8px; margin: 0 8px 0 0; transition: .5s; }
+
+body .container .main .row-main .statistic .container-details table tr th p:hover { background-color: #f5f5f3; cursor: pointer; color: #333; }
+
+body .container .main .row-main .statistic .container-details table tr th p:hover:nth-child(2) { background-color: #f5f5f3; fill: #979797; }
+
+body .container .main .row-main .statistic .container-details table tr th .icon-arrow-left { width: 6px; transform: rotate(90deg); fill: #fff; }
+
+body .container .main .row-main .statistic .container-details table .column { transition: .5s; }
+
+body .container .main .row-main .statistic .container-details table .column:hover { background-color: #f5f5f2; cursor: pointer; }
+
+body .container .main .row-main .statistic .container-details table .column td { padding: 25px 10px; border-bottom: 1px solid #e3e3e3; }
 
 body .container .main .row-main .statistic .container-details .content-line { display: flex; justify-content: center; flex-direction: column; }
 
-body .container .main .row-main .statistic .container-details .content-line .details-line { display: flex; justify-content: space-around; align-items: center; border-bottom: 1px solid #e3e3e3; transition: .5s; }
+body .container .main .row-main .statistic .container-details .content-line .details-line { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e3e3e3; transition: .5s; }
 
 body .container .main .row-main .statistic .container-details .content-line .details-line:hover { background-color: #f5f5f2; cursor: pointer; }
 
-body .container .main .row-main .statistic .container-details .content-line .details-line p { text-align: left; padding: 25px 25px; }
+body .container .main .row-main .statistic .container-details .content-line .details-line p { text-align: left; padding: 25px 30px 25px 10px; }
 
 body .container .main .row-main .statistic .container-details .content-number { display: flex; justify-content: center; margin-top: 15px; }
 
@@ -501,7 +519,7 @@ body .container .main .row-main .statistic-2 .container .general .column::-webki
 
 body .container .main .row-main .statistic-2 .container .general .column::-webkit-scrollbar { width: 7px; background-color: #f5f5f5; }
 
-body .container .main .row-main .statistic-2 .container .general .column::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(170, 170, 170, 0.3); background-color: #909090; }
+body .container .main .row-main .statistic-2 .container .general .column::-webkit-scrollbar-thumb { opacity: 0; border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(170, 170, 170, 0.3); background-color: #909090; }
 
 body .container .main .row-main .statistic-2 .container .general .column .line { display: flex; flex-direction: row; justify-content: space-between; align-items: center; border-bottom: 1px solid #e3e3e3; padding: 15px 10px; transition: .5s; }
 
