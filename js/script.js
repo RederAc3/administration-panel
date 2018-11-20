@@ -90,7 +90,7 @@ document.addEventListener('keyup', function (e) {
 var ctx = document.getElementById('myChart').getContext('2d');
 
 var chart = new Chart(ctx, {
-    
+
 
     type: 'bar',
     data: {
@@ -98,7 +98,6 @@ var chart = new Chart(ctx, {
         labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10"],
 
         datasets: [{
-
                 label: "Signups",
                 backgroundColor: '#8DBEC8',
                 borderColor: '#8DBEC8',
@@ -118,9 +117,16 @@ var chart = new Chart(ctx, {
                 hidden: true,
         }]
     },
-    
+
     options: {
-      events: ['click']  
+        legend: {
+            display: true,
+//            onClick: {
+//              backgroundColor: '#e3e3e3',  
+//            }
+        }
     },
-    
+    ticks: {
+        fontSize: '30px',
+    },
 });
