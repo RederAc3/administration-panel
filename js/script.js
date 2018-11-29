@@ -1,4 +1,5 @@
 'use strict'
+
 $(function () {
     $('.select').datepicker();
 });
@@ -82,6 +83,46 @@ document.addEventListener('keyup', function (e) {
     }
 });
 
+//##############################-SIDEBAR-################################
+
+var sidebar = document.querySelector('.sidebar');
+var hamburger = document.querySelector('.hamburger');
+var main = document.querySelector('.main');
+var score = 0;
+
+function closeSidebar() {
+    sidebar.classList.add('hidden-sidebar')
+    sidebar.classList.remove('col-2')
+    hamburger.classList.remove('close-hamburger')
+    hamburger.classList.remove('close')
+    main.classList.add('margin-none')
+    hamburger.classList.remove('hamburger-translate')
+
+};
+
+function openSidebar() {
+    sidebar.classList.remove('hidden-sidebar')
+    sidebar.classList.add('col-2')
+    hamburger.classList.add('close-hamburger')
+    hamburger.classList.add('close')
+    main.classList.remove('margin-none')
+    hamburger.classList.add('hamburger-translate')
+
+};
+
+hamburger.addEventListener('click', function (event) {
+
+    if (score % 2) {
+        openSidebar();
+        console.log(score);
+        score++;
+
+    } else {
+        closeSidebar();
+        console.log(score);
+        score++;
+    }
+});
 
 
 //###########################--WYKRES--##################################
@@ -119,14 +160,19 @@ var chart = new Chart(ctx, {
     },
 
     options: {
-        legend: {
-            display: true,
-//            onClick: {
-//              backgroundColor: '#e3e3e3',  
-//            }
-        }
-    },
-    ticks: {
-        fontSize: '30px',
+        labels: {
+            //            padding: 20,
+            //            fontColor: '#fff',
+            //        },
+            legend: {
+                display: true,
+                //            onClick: {
+                //              backgroundColor: '#e3e3e3',  
+                //            }
+            }
+        },
+        ticks: {
+            fontSize: '30px',
+        },
     },
 });
