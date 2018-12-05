@@ -1,0 +1,176 @@
+.statistic-2 {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 18px solid #f5f5f2;
+    display: flex;
+    flex-direction: column;
+    border-top: none;
+
+    & > p {
+        padding: 18px;
+        color: #979797;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    .row-2 {
+        width: 100%;
+        border: none;
+
+        .button-add {
+            display: flex;
+            width: 130px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background-color: #f58220;
+            margin: 30px auto;
+            transition: .5s;
+
+            &:hover {
+                background-color: #ffa200;
+                cursor: pointer;
+            }
+
+            .svg-plus {
+
+                .icon-close {
+                    width: 9px;
+                    fill: #fff;
+                    margin-left: 10px;
+                    transform: rotate(45deg);
+                }
+            }
+
+            p {
+                font-size: 17px;
+                padding: 10px;
+                color: #e3e3e3;
+            }
+
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        width: 683px;
+
+        .general {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .column {
+                width: 100%;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                height: 900px;
+                border-top: 1px solid #e3e3e3;
+
+                &::-webkit-scrollbar-track {
+                    -webkit-box-shadow: inset 0 0 6px rgba(170, 170, 170, 0.3);
+                    border-radius: 10px;
+                    background-color: #F5F5F5;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 7px;
+                    background-color: #f5f5f5;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    opacity: 0;
+                    border-radius: 10px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(170, 170, 170, 0.3);
+                    background-color: #909090;
+                }
+
+                .line {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 1px solid #e3e3e3;
+                    padding: 15px 10px;
+                    transition: .5s;
+
+                    &:hover {
+                        background-color: #f5f5f2;
+
+
+                        .svg {
+
+                            .icon-links,
+                            .icon-trash {
+                                opacity: 1;
+                                transition: .5s;
+                                cursor: pointer;
+
+                                &:hover {
+                                    transform: scale(1.2);
+                                    transition: .5s;
+                                }
+                            }
+                        }
+                    }
+
+
+                    .name {
+                        display: flex;
+                        color: #979797;
+                        font-weight: 600;
+                        width: 250px;
+
+                    }
+
+                    .link {
+                        display: flex;
+                        justify-content: flex-start;
+
+
+                        a {
+                            width: 300px;
+                            font-family: "Open Sans", Helvetica, Arial;
+                            text-decoration: none;
+                            color: #56819f;
+                            text-align: left;
+
+                            &:hover {
+                                color: #ffa200;
+                            }
+                        }
+                    }
+
+                    .svg {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: 0;
+                        margin: 0;
+
+                        .icon-links {
+                            opacity: 0;
+                            width: 18px;
+                            padding: 10px;
+                            fill: #ff0000;
+                        }
+
+                        .icon-trash {
+                            opacity: 0;
+                            width: 13px;
+                            padding: 10px;
+                            fill: #979797;
+                            margin-top: -3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
